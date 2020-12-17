@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////////////////
+/// NOTE: you probably shouldn't edit this file directly. ///
+/////////////////////////////////////////////////////////////
+
+use lambda_runtime::lambda;
+
+// NOTE: This is set in Makefile and evaluated at compile time
+const AWS_RESOURCE_NAME: &'static str = env!("AWS_RESOURCE_NAME");
+const TEMPLATE_YAML: &'static str = env!("TEMPLATE_YAML");
+
+fn main() {
+    println!("Starting {}", AWS_RESOURCE_NAME);
+
+    // NOTE: The next line can't be changed without breaking build.rs
+    let handler = /*{{RF_LAMBDA_HANDLER}}*/ handlers::default_handler;
+
+    lambda!(handler);
+}
