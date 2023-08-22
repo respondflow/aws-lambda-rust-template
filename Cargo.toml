@@ -1,8 +1,9 @@
 [package]
 name = "bootstrap" # must be named bootstrap to work with Lambda
 version = "0.1.0"
-authors = ["Respond Flow <dev@respondflow.com>"]
+authors = ["Volt Engineering <dev@textvolt.com>"]
 edition = "2018"
+license = "MIT"
 
 [dependencies]
 serde = {version = "1.0.118", features = ["derive"]}
